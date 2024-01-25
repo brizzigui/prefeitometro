@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@1,700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
@@ -17,23 +18,31 @@
 
         <div class="home_screen">
             <img class="ballot_gif" src="./assets/ballot.gif" alt="Animação de uma urna física recebendo uma cédula de papel azul.">
-            <h1 class="home_screen_callout">
+            <h1 class="home_screen_callout" id="first_line">
                 Com qual 
             </h1>
-            <h1 class="home_screen_callout animated_text candidate">
-                candidato
-            </h1>
-            <h1 class="home_screen_callout animated_text mayor">
-                prefeito
-            </h1>
-            <h1 class="home_screen_callout animated_text party">
-                partido
-            </h1>
-            <h1>
+            <div class="moving_text_container">
+                <h1 class="moving_text">
+                    candidato <br>
+                    prefeita <br>
+                    partido <br>
+                    prefeito <br>
+                    político <br>
+                    candidato <br>
+                </h1>
+            </div>
+            <h1 class="home_screen_callout" id="last_line">
                 você se encaixa?
             </h1>
-
-            <a class="button" href="./test.html">Iniciar teste</a>
+            <div class="button_box">
+                <a class="button" href="./test.html">Iniciar teste</a>
+            </div>
         </div>
+
+        <footer class="footer">
+            <div class="footer_text">
+                <p>Made by <a href="https://github.com/brizzigui">Guilherme Brizzi</a> with <3</p>
+            </div>
+        </footer>
     </body>
 </html>
