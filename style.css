@@ -25,6 +25,7 @@
 
 .home_screen
 {
+    user-select: none;
     position: relative;
 
     top: 60px;
@@ -33,6 +34,11 @@
     width: 70%;
     height: 50%;
     text-align: center;
+}
+
+img 
+{
+    pointer-events: none;
 }
 
 .ballot_gif
