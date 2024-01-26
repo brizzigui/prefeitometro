@@ -386,4 +386,9 @@ a.button:hover
         left: 32.5px;
         font-family: "Lato", sans-serif;
     }
+    
+    .questionary
+    {
+        width: 90%;
+    }
 }
