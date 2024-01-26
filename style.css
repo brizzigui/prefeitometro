@@ -238,6 +238,8 @@ a.button:hover
     top: 60px; 
     width: 70%;
     margin: auto;
+
+    display: block;
 }
 
 .question_box
@@ -389,8 +391,15 @@ a.button:hover
     
     .questionary
     {
+        display: block;
         width: 90%;
     }
+}
+
+
+#results
+{
+    display: none;
 }
 
 .winning_text
@@ -413,4 +422,98 @@ a.button:hover
 
     margin-bottom: 0px;
     margin-top: 0px;
+}
+
+.results_button
+{
+    box-sizing: border-box;
+
+    background-color: rgb(30, 116, 169);
+    border: 2px solid rgb(51, 149, 182);
+    border-radius: 5px;
+
+    color: white;
+
+    text-align: center;
+    padding: auto;
+
+    font-family: 'Zilla Slab', serif;
+    font-size: medium;
+
+    width: 150px;
+    height: 50px;
+    transition: all 2s ease-out;
+
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+
+    cursor: pointer;
+}
+
+.results_button:hover
+{
+    background-color: rgb(82, 173, 229);
+    border: 2px solid rgb(119, 193, 218);
+    transition: all 0.3s ease-out;
+}
+
+
+#results_button_box
+{
+    width: 100%;
+    height: 50px;
+}
+
+#fake_wait
+{
+    display: none;
+}
+
+#fake_wait_box
+{
+    height: 200px;
+}
+
+.calculating_message
+{
+    text-align: center;
+    font-family: 'Zilla Slab', serif;
+    color: rgb(32, 157, 207);
+}
+
+.progress_bar_hull
+{
+    position: relative;
+    margin: auto;
+
+    width: 90%;
+    height: 30px;
+
+
+    background-color: gray;
+
+    border-radius: 5px;
+
+    content: "";
+}
+
+.progress_bar
+{
+    position: relative;
+    margin: auto;
+
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    height: 25px;
+    width: 2%;
+    top: 2.5px;
+
+    border-radius: 4px;
+    
+    background-color: rgb(32, 157, 207);
+    
+    content: "";
+
+    transition: all ease-in-out 0.75s;
 }

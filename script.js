@@ -20,6 +20,8 @@ async function calculate_results()
     const tiger_answers = [full_agr, part_dis, full_agr];
 
     const candidate_answers = [turtle_answers, bird_answers, tiger_answers];
+    const candidate_strings = ["Tartaruga", "Passarinho", "Tigre"];
+
     let affinity_points = [0, 0, 0];
     
     let user_answers = get_user_answers();
@@ -33,8 +35,8 @@ async function calculate_results()
     }
 
     console.log(affinity_points);
-    suspense_time();
-    display_ranking(affinity_points);
+    await suspense_time();
+    display_ranking(affinity_points, candidate_strings);
 }
 
 function calculate_points(answer_A, answer_B)
@@ -106,10 +108,49 @@ function get_user_answers()
 
 async function suspense_time()
 {
-    return;
+    document.getElementById("questionary").style.display = "none";
+    document.getElementById("fake_wait").style.display = "block";
+
+    await new Promise(r => setTimeout(r, 1000));
+
+    document.getElementById("calculating_message").innerHTML = "Comparando candidatos...";
+    document.getElementById("progress_bar").style.width = "40%"
+
+    await new Promise(r => setTimeout(r, 2000));
+
+    document.getElementById("calculating_message").innerHTML = "Somando pontuações...";
+    document.getElementById("progress_bar").style.width = "90%"
+
+    await new Promise(r => setTimeout(r, 1500));
+
+    document.getElementById("progress_bar").style.width = "99%"
+
+    await new Promise(r => setTimeout(r, 500));
+
+    document.getElementById("fake_wait").style.display = "none";
 }
 
-function display_ranking(affinity_points)
+function index_max_array(arr)
 {
+    let max = 0
+    let best_index = 0;
 
+    for (let index = 0; index < arr.length; index++) {
+        if (arr[index] > max) {
+            max = arr[index];
+            best_index = index;
+        }
+        
+    }
+
+    return best_index;
+}
+
+function display_ranking(affinity_points, candidate_strings)
+{
+    document.getElementById("results").style.display = "block";
+
+    let index = index_max_array(affinity_points);
+    document.getElementById("winning_candidate").innerHTML = candidate_strings[index];
+    document.getElementById("winner_percent").innerHTML = (affinity_points[index] / 30)*100;
 }

@@ -163,9 +163,21 @@
                     3/15
                 </p>
             </div>
+            <div id = "results_button_box">
+                <button onclick="calculate_results();" class="results_button">Ver resultados</button>
+            </div>
+        </div>
 
-            <div class="question_box" id="calculation_button">
-                <button onclick="calculate_results();">Calcular resultados</button>
+        <div class="questionary" id="fake_wait">
+            <div class="question_box" id="fake_wait_box">
+                <h1 class="calculating_message" id="calculating_message">
+                    Calculando suas afinidades...
+                </h1>
+    
+                <div class="progress_bar_hull">
+                    <div class="progress_bar" id="progress_bar">
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -175,7 +187,7 @@
                     O candidato que mais se encaixa com você é
                 </h2>
 
-                <h1 class="winning_candidate">
+                <h1 class="winning_candidate" id="winning_candidate">
                     Tartaruga
                 </h1>
 
@@ -183,8 +195,8 @@
                 <br>
                 <p class="winning_text">com <span id="winner_percent">xx</span>% de afinidade.</p>
                 
-                <div class="button_box">
-                    <a class="button" href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share">Share via Whatsapp</a>
+                <div style="text-align: center; margin-top: 50px; margin-bottom: 20px;">
+                    <a class="button" href="whatsapp://send?text=Acabei de fazer o Prefeitômetro e meu candidato deu [o/a] xxxx, com xx% de afinidade. Quer ver qual mais se encaixa contigo? Faça o teste: prefeitometro.vercel.app" data-action="share/whatsapp/share">Compartilhar</a>
                 </div>
             </div>
         </div>
