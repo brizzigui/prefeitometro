@@ -23,7 +23,7 @@ body
     color: black;
 
     text-decoration: none;
-    
+
     a:link {color: black;}      /* unvisited link */
     a:visited {color: black;}   /* visited link */
     a:hover {color: black;}     /* mouse over link */
@@ -125,11 +125,13 @@ img
     position: absolute;
     width: 100%;
     top: 500px;
+
+    height: 100px;
 }
 
 a
 {
-    color: rgb(82, 173, 229);
+    color: rgb(32, 157, 207);
 }
 
 a.button {
@@ -156,20 +158,24 @@ a.button {
 
     width: 150px;
     height: 50px;
+    transition: all 2s ease-out;
 }
 
 a.button:hover
 {
     background-color: rgb(82, 173, 229);
     border: 2px solid rgb(119, 193, 218);
+    transition: all 0.3s ease-out;
 }
 
 .footer
 {
-    font-family: Helvetica, sans-serif;
+    font-family: Lato, sans-serif;
     font-size:small;
     background-color: whitesmoke;
     color: black;
+
+    border-top: solid 1px lightgray;
 
     position: fixed;
     left: 0px;
@@ -236,12 +242,14 @@ a.button:hover
 
 .question_box
 {
+    position: relative;
     font-family: "Lato", sans-serif;
     border: solid 3px lightgray;
     border-radius: 5px;
 
     background-color: whitesmoke;
 
+    padding-top: 10px;
     padding-left: 15px;
     padding-right: 15px;
     margin-bottom: 25px;
@@ -257,4 +265,125 @@ a.button:hover
 {
     font-family: 'Lato', sans-serif;
     margin-top: -10px;
+}
+
+.question_counter
+{
+    font-family: 'Zilla Slab', serif;
+    size: x-small;
+    color: rgb(32, 157, 207);
+    position: absolute;
+    top: -10px;
+    left: 15px;
+}
+
+.info_icon
+{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+
+@media (min-width: 700px)
+{
+    .all_options
+    {
+        position: relative;
+        border: none;
+    
+        height: 65px;
+    }
+    
+    .single_option
+    {
+        position: absolute;
+        display: inline-block;
+        width: 20%;
+        height: 100%;
+    }
+    
+    .single_option.first
+    {
+        left: 0%;
+    }
+    
+    .single_option.second
+    {
+        left: 20%;
+    }
+    
+    .single_option.third
+    {
+        left: 40%;
+    }
+    
+    .single_option.fourth
+    {
+        left: 60%;
+    }
+    
+    .single_option.fifth
+    {
+        left: 80%;
+    }
+    
+    .checkbox_option
+    {
+        display: block;
+    
+        position: relative;
+        margin: auto;
+        text-align: center;
+        accent-color: rgb(32, 157, 207);
+
+        width: 30px;
+        height: 30px;
+    
+        top: -10px;
+    }
+    
+    .checkbox_label
+    {
+        display: block;
+        position: sticky;
+        text-align: center;
+        margin: auto;
+    
+        top: 15px;
+        left: -10%;
+    
+        font-family: "Lato", sans-serif;
+        font-size: small;
+        
+        width: 100%;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 700px) 
+{
+    .all_options
+    {
+        margin-top: -15px;
+        border: none;
+    }
+
+    .single_option
+    {
+        position: relative;
+    }
+
+    .checkbox_option
+    {
+        width: 20px;
+        height: 20px;
+    }
+
+    .checkbox_label
+    {
+        position: absolute;
+        top: 3px;
+        left: 32.5px;
+        font-family: "Lato", sans-serif;
+    }
 }
