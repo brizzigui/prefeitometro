@@ -26,7 +26,7 @@
             </h1>
         </div>
         
-        <div class="questionary">
+        <div class="questionary" id="questionary">
             <div class="question_box">
                 <h1 style="font-family: 'Zilla Slab', serif;">
                     Como funciona?
@@ -166,6 +166,26 @@
 
             <div class="question_box" id="calculation_button">
                 <button onclick="calculate_results();">Calcular resultados</button>
+            </div>
+        </div>
+
+        <div class="questionary" id="results">
+            <div class="question_box" id="result_box">
+                <h2 class="winning_text">
+                    O candidato que mais se encaixa com você é
+                </h2>
+
+                <h1 class="winning_candidate">
+                    Tartaruga
+                </h1>
+
+                <p class="winning_text">do Partido dos Trabalhadores</p>
+                <br>
+                <p class="winning_text">com <span id="winner_percent">xx</span>% de afinidade.</p>
+                
+                <div class="button_box">
+                    <a class="button" href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share">Share via Whatsapp</a>
+                </div>
             </div>
         </div>
 

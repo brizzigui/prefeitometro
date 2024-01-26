@@ -1,3 +1,10 @@
+/*
+    Many of the arrays used to calculate
+    affinity here are mere placeholders that
+    must be altered when real answers
+    are made available.
+*/
+
 const full_dis = 0;
 const part_dis = 1;
 const neutral = 2;
@@ -104,5 +111,5 @@ async function suspense_time()
 
 function display_ranking(affinity_points)
 {
-    
+
 }

@@ -392,3 +392,25 @@ a.button:hover
         width: 90%;
     }
 }
+
+.winning_text
+{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    margin: auto;
+    text-wrap: balance;
+    width: 250px;
+}
+
+
+.winning_candidate
+{
+    font-family: 'Zilla Slab', serif;
+    text-align: center;
+    font-size: 5em;
+
+    color: rgb(32, 157, 207);
+
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
