@@ -222,7 +222,7 @@ function copy_share_link()
 function set_mobile_link()
 {
     let text = create_share_text();
-    text = "whatsapp://send?text=" + text;
+    text = "whatsapp://send?text=" + text + '"';
 
     document.getElementById("mobile_sharing").href = text;
 }

@@ -161,6 +161,8 @@ a.button {
     width: 150px;
     height: 50px;
     transition: all 2s ease-out;
+
+    user-select: none;
 }
 
 a.button:hover
