@@ -11,6 +11,8 @@ const neutral = 2;
 const part_agr = 3;
 const full_agr = 4;
 
+const NUMBER_QUESTIONS = 3;
+
 let affinity_points = [0, 0, 0];
 
 
@@ -24,8 +26,14 @@ async function calculate_results()
 
     const candidate_answers = [turtle_answers, bird_answers, tiger_answers];
     const candidate_strings = ["Tartaruga", "Passarinho", "Tigre"];
+    const candidate_parties = ["PTar", "PPass", "PTig"]
     
     let user_answers = get_user_answers();
+    if (user_answers.length != NUMBER_QUESTIONS) 
+    {
+        alert("Você deve responder a todas as perguntas antes de terminar o teste.");
+        return;
+    }
 
     for (let i = 0; i < candidate_answers.length; i++) 
     {
@@ -35,9 +43,8 @@ async function calculate_results()
         }
     }
 
-    console.log(affinity_points);
     await suspense_time();
-    display_ranking(candidate_strings);
+    display_ranking(candidate_strings, candidate_parties);
 
     set_mobile_link();
 }
@@ -153,12 +160,13 @@ function index_max_array(arr)
     return best_index;
 }
 
-function display_ranking(candidate_strings)
+function display_ranking(candidate_strings, candidate_parties)
 {
     document.getElementById("results").style.display = "block";
 
     let index = index_max_array(affinity_points);
     document.getElementById("winning_candidate").innerHTML = candidate_strings[index];
+    document.getElementById("winning_party").innerHTML = candidate_parties[index];
     document.getElementById("winner_percent").innerHTML = get_affinity_percentage();
 }
 
