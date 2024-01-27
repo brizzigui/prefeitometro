@@ -38,7 +38,7 @@ async function calculate_results()
     console.log(affinity_points);
     await suspense_time();
     display_ranking(candidate_strings);
-    
+
     set_mobile_link();
 }
 
@@ -114,25 +114,25 @@ async function suspense_time()
     document.getElementById("questionary").style.display = "none";
     document.getElementById("fake_wait").style.display = "block";
 
-    await new Promise(r => setTimeout(r, 1000));
+    //await new Promise(r => setTimeout(r, 1000));
 
     document.getElementById("calculating_message").innerHTML = "Comparando candidatos...";
     document.getElementById("progress_bar").style.width = "40%";
 
-    await new Promise(r => setTimeout(r, 1000));
+    //await new Promise(r => setTimeout(r, 1000));
 
     document.getElementById("progress_bar").style.width = "60%";
 
-    await new Promise(r => setTimeout(r, 1000));
+    //await new Promise(r => setTimeout(r, 1000));
 
     document.getElementById("calculating_message").innerHTML = "Somando pontuações...";
     document.getElementById("progress_bar").style.width = "90%"
 
-    await new Promise(r => setTimeout(r, 1500));
+    //await new Promise(r => setTimeout(r, 1500));
 
     document.getElementById("progress_bar").style.width = "99%"
 
-    await new Promise(r => setTimeout(r, 500));
+    //await new Promise(r => setTimeout(r, 500));
 
     document.getElementById("fake_wait").style.display = "none";
 }
@@ -159,7 +159,7 @@ function display_ranking(candidate_strings)
 
     let index = index_max_array(affinity_points);
     document.getElementById("winning_candidate").innerHTML = candidate_strings[index];
-    document.getElementById("winner_percent").innerHTML = (affinity_points[index] / 30)*100;
+    document.getElementById("winner_percent").innerHTML = get_affinity_percentage();
 }
 
 function get_gendered_article(name)
@@ -224,7 +224,7 @@ function copy_share_link()
 function set_mobile_link()
 {
     let text = create_share_text();
-    text = "whatsapp://send?text=" + text + '"';
+    text = "whatsapp://send?text=" + text;
 
     document.getElementById("mobile_sharing").href = text;
 }

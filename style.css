@@ -420,12 +420,45 @@ a.button:hover
 {
     font-family: 'Zilla Slab', serif;
     text-align: center;
-    font-size: 5em;
 
     color: rgb(32, 157, 207);
 
     margin-bottom: 0px;
     margin-top: 0px;
+}
+
+@media (min-width: 0px) and (max-width: 650px)
+{
+    .winning_text
+    {
+        font-size: medium;
+    }
+
+    #grand_winning_text
+    {
+        font-size: large;
+
+    }
+
+    .winning_candidate
+    {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        line-height: 45px;
+        font-size: 3em;
+    }
+}
+
+@media (min-width: 650.01px)
+{
+    .winning_candidate
+    {
+        font-size: 5em;
+
+        margin-top: 15px;
+        margin-bottom: 15px;
+        line-height: 65px;
+    }
 }
 
 .results_button
