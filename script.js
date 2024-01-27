@@ -11,6 +11,9 @@ const neutral = 2;
 const part_agr = 3;
 const full_agr = 4;
 
+let affinity_points = [0, 0, 0];
+
+
 const answer_indexes = ["full_dis", "part_dis", "neutral", "part_agr", "full_agr"];
 
 async function calculate_results()
@@ -21,8 +24,6 @@ async function calculate_results()
 
     const candidate_answers = [turtle_answers, bird_answers, tiger_answers];
     const candidate_strings = ["Tartaruga", "Passarinho", "Tigre"];
-
-    let affinity_points = [0, 0, 0];
     
     let user_answers = get_user_answers();
 
@@ -36,7 +37,7 @@ async function calculate_results()
 
     console.log(affinity_points);
     await suspense_time();
-    display_ranking(affinity_points, candidate_strings);
+    display_ranking(candidate_strings);
 }
 
 function calculate_points(answer_A, answer_B)
@@ -114,9 +115,13 @@ async function suspense_time()
     await new Promise(r => setTimeout(r, 1000));
 
     document.getElementById("calculating_message").innerHTML = "Comparando candidatos...";
-    document.getElementById("progress_bar").style.width = "40%"
+    document.getElementById("progress_bar").style.width = "40%";
 
-    await new Promise(r => setTimeout(r, 2000));
+    await new Promise(r => setTimeout(r, 1000));
+
+    document.getElementById("progress_bar").style.width = "60%";
+
+    await new Promise(r => setTimeout(r, 1000));
 
     document.getElementById("calculating_message").innerHTML = "Somando pontuações...";
     document.getElementById("progress_bar").style.width = "90%"
@@ -146,11 +151,78 @@ function index_max_array(arr)
     return best_index;
 }
 
-function display_ranking(affinity_points, candidate_strings)
+function display_ranking(candidate_strings)
 {
     document.getElementById("results").style.display = "block";
 
     let index = index_max_array(affinity_points);
     document.getElementById("winning_candidate").innerHTML = candidate_strings[index];
     document.getElementById("winner_percent").innerHTML = (affinity_points[index] / 30)*100;
+}
+
+function get_gendered_article(name)
+{
+    switch (name) 
+    {
+        case "Tartaruga":
+            return "a";
+        
+        case "Tigre":
+            return "o";
+
+        case "Passarinho":
+            return "o";
+    
+        default:
+            console.log("Unable to find gendered article. Check code.");
+            return "o";
+    }
+
+}
+
+function get_affinity_percentage()
+{
+    let index = index_max_array(affinity_points);
+    let percent = (affinity_points[index] / 30)*100
+    percent = Math.round(percent * 100) / 100;
+
+    return percent;
+}
+
+function create_share_text()
+{
+    let winner_name = document.getElementById("winning_candidate").innerHTML;
+    let text = "Acabei de fazer o Prefeitômetro e meu candidato deu " 
+                + get_gendered_article(winner_name) 
+                + " " + winner_name 
+                + ", com " + get_affinity_percentage() 
+                + "% de afinidade."
+                + " Quer ver qual mais se encaixa contigo? Faça o teste: prefeitometro.vercel.app";
+
+    return text;
+}
+
+function copy_to_user_clipboard(text)
+{
+    navigator.clipboard.writeText(text);
+    return;
+}
+
+function copy_share_link()
+{
+    let text = create_share_text();
+    copy_to_user_clipboard(text);
+
+    document.getElementById("desktop_sharing").className = "results_button copied_confirmation";
+    document.getElementById("desktop_sharing").innerHTML = "<strong>Copiado!</strong>";
+
+    return;
+}
+
+function set_mobile_link()
+{
+    let text = create_share_text();
+    text = "whatsapp://send?text=" + text;
+
+    document.getElementById("mobile_sharing").href = text;
 }

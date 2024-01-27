@@ -12,7 +12,9 @@ body
     top: 0px;
 
     text-align: center;
-    background-color: lightblue;
+    background-color: whitesmoke;
+
+    border-bottom: solid 1px lightgray;
 
 }
 
@@ -20,14 +22,14 @@ body
 {
     font-family: 'Zilla Slab', serif;
     font-size: x-large;
-    color: black;
+    color: rgb(32, 157, 207);
 
     text-decoration: none;
 
-    a:link {color: black;}      /* unvisited link */
-    a:visited {color: black;}   /* visited link */
-    a:hover {color: black;}     /* mouse over link */
-    a:active {color: black;}    /* selected link */
+    a:link {color: rgb(32, 157, 207);;}      /* unvisited link */
+    a:visited {color: rgb(32, 157, 207);;}   /* visited link */
+    a:hover {color: rgb(32, 157, 207);;}     /* mouse over link */
+    a:active {color: rgb(32, 157, 207);;}    /* selected link */
 }
 
 .subtitle
@@ -235,7 +237,7 @@ a.button:hover
 .questionary
 {
     position: relative;
-    top: 60px; 
+    top: 70px; 
     width: 70%;
     margin: auto;
 
@@ -458,6 +460,12 @@ a.button:hover
     transition: all 0.3s ease-out;
 }
 
+.results_button.copied_confirmation
+{
+    background-color: rgb(30, 169, 56);
+    border: 2px solid rgb(51, 182, 66);
+}
+
 
 #results_button_box
 {
@@ -491,7 +499,7 @@ a.button:hover
     height: 30px;
 
 
-    background-color: gray;
+    background-color: lightblue;
 
     border-radius: 5px;
 
@@ -515,5 +523,39 @@ a.button:hover
     
     content: "";
 
-    transition: all ease-in-out 0.75s;
+    transition: all ease-in 0.75s;
+}
+
+#desktop_sharing
+{
+    position: relative; 
+    margin: auto;
+    left: 0%;
+}
+
+
+@media (min-width: 0px) and (max-width: 650px)
+{
+    #mobile_sharing
+    {
+        display: block;
+    }
+
+    #desktop_sharing
+    {
+        display: none;
+    }
+}
+
+@media (min-width: 650.01px)
+{
+    #mobile_sharing
+    {
+        display: none;
+    }
+
+    #desktop_sharing
+    {
+        display: block;
+    }
 }

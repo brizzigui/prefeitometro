@@ -196,7 +196,8 @@
                 <p class="winning_text">com <span id="winner_percent">xx</span>% de afinidade.</p>
                 
                 <div style="text-align: center; margin-top: 50px; margin-bottom: 20px;">
-                    <a class="button" href="whatsapp://send?text=Acabei de fazer o Prefeitômetro e meu candidato deu [o/a] xxxx, com xx% de afinidade. Quer ver qual mais se encaixa contigo? Faça o teste: prefeitometro.vercel.app" data-action="share/whatsapp/share">Compartilhar</a>
+                    <button class="results_button" id="desktop_sharing" onclick="copy_share_link();">Compartilhar</button>
+                    <a class="button" id="mobile_sharing" data-action="share/whatsapp/share" style="margin:auto;">Compartilhar</a>
                 </div>
             </div>
         </div>
