@@ -38,6 +38,8 @@ async function calculate_results()
     console.log(affinity_points);
     await suspense_time();
     display_ranking(candidate_strings);
+    
+    set_mobile_link();
 }
 
 function calculate_points(answer_A, answer_B)
