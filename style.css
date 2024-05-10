@@ -152,7 +152,7 @@ a.button {
     color: white;
 
     text-align: center;
-    padding: auto;
+    display: inline-block;
 
     line-height: 50px;
 

@@ -14,9 +14,11 @@ const full_agr = 4;
 const NUMBER_QUESTIONS = 3;
 
 let affinity_points = [0, 0, 0];
-
-
 const answer_indexes = ["full_dis", "part_dis", "neutral", "part_agr", "full_agr"];
+
+function has_answered_all(user_answers) {
+    return (user_answers.length == NUMBER_QUESTIONS) 
+}
 
 async function calculate_results()
 {
@@ -29,7 +31,7 @@ async function calculate_results()
     const candidate_parties = ["PTar", "PPass", "PTig"]
     
     let user_answers = get_user_answers();
-    if (user_answers.length != NUMBER_QUESTIONS) 
+    if (has_answered_all(user_answers)) 
     {
         alert("Você deve responder a todas as perguntas antes de terminar o teste.");
         return;
