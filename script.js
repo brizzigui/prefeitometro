@@ -81,7 +81,7 @@ function get_user_answers()
     let user_answers = [];
     let request_id;
 
-    for (let i = 0; i < 3; i++) 
+    for (let i = 0; i < 15; i++) 
     {
         if (i+1 < 10) 
         {
