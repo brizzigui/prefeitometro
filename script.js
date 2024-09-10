@@ -186,14 +186,13 @@ function index_max_array(arr)
 
 function display_ranking(candidate_strings, candidate_parties)
 {
-    document.getElementById("results").style.display = "block";
-
     let index = index_max_array(affinity_points);
     document.getElementById("winning_candidate").innerHTML = candidate_strings[index];
     document.getElementById("winning_party").innerHTML = candidate_parties[index];
     document.getElementById("winner_percent").innerHTML = get_affinity_percentage();
     document.getElementById("winning_picture").src = img_links[index];
-
+    
+    document.getElementById("results").style.display = "block";
 }
 
 function get_gendered_article(name)
