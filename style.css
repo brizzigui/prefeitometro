@@ -370,7 +370,6 @@ a.button:hover
         text-align: center;
         margin: auto;
     
-        top: 15px;
         left: -10%;
     
         font-family: "Lato", sans-serif;
@@ -397,6 +396,7 @@ a.button:hover
     {
         width: 20px;
         height: 20px;
+        accent-color: rgb(32, 157, 207);
     }
 
     .checkbox_label
@@ -440,6 +440,18 @@ a.button:hover
     margin-bottom: 0px;
     margin-top: 0px;
 }
+
+.winning_picture
+{
+    margin-top: 10px;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: solid 3px rgb(32, 157, 207);
+    border-radius: 3px;
+}
+
 
 @media (min-width: 0px) and (max-width: 650px)
 {

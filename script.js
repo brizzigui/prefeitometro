@@ -15,6 +15,32 @@ const NUMBER_QUESTIONS = 3;
 
 let affinity_points = [0, 0, 0];
 const answer_indexes = ["full_dis", "part_dis", "neutral", "part_agr", "full_agr"];
+const img_links =   [
+                    "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002149679/88412",
+                    "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002341283/88412",
+                    "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002148504/88412",
+                    "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002188556/88412",
+                    "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210001995616/88412",
+                    "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002189747/88412",
+                    "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210001964902/88412"   
+
+]
+
+const alidio_answers = [part_dis, part_agr, part_agr];
+const moacir_answers = [full_agr, full_dis, full_dis];
+const burmann_answers = [full_agr, part_dis, full_agr];
+const riesgo_answers = [part_dis, part_agr, part_agr];
+const roberta_answers = [full_agr, full_dis, full_dis];
+const decimo_answers = [full_agr, part_dis, full_agr];
+const valdeci_answers = [full_agr, part_dis, full_agr];
+
+const alidio_just = ["Lorem ipsum", "sit amet", "dolor"];
+const moacir_just = ["Lorem ipsum", "sit amet", "dolor"];
+const burmann_just = ["Lorem ipsum", "sit amet", "dolor"];
+const riesgo_just = ["Lorem ipsum", "sit amet", "dolor"];
+const roberta_just = ["Lorem ipsum", "sit amet", "dolor"];
+const decimo_just = ["Lorem ipsum", "sit amet", "dolor"];
+const valdeci_just = ["Lorem ipsum", "sit amet", "dolor"];
 
 function has_answered_all(user_answers) {
     return (user_answers.length == NUMBER_QUESTIONS) 
@@ -22,13 +48,9 @@ function has_answered_all(user_answers) {
 
 async function calculate_results()
 {
-    const turtle_answers = [part_dis, part_agr, part_agr];
-    const bird_answers = [full_agr, full_dis, full_dis];
-    const tiger_answers = [full_agr, part_dis, full_agr];
-
-    const candidate_answers = [turtle_answers, bird_answers, tiger_answers];
-    const candidate_strings = ["Tartaruga", "Passarinho", "Tigre"];
-    const candidate_parties = ["PTar", "PPass", "PTig"]
+    const candidate_answers = [alidio_answers, moacir_answers, burmann_answers, riesgo_answers, roberta_answers, decimo_answers, valdeci_answers];
+    const candidate_strings = ["Alidio da Luz", "Dr Moacir", "Professor Burmann", "Riesgo", "Roberta Leitão", "Rodrigo Decimo", "Valdeci Oliveira"];
+    const candidate_parties = ["PSOL", "PRD", "PDT", "NOVO", "PL", "PSDB", "PT"]
     
     let user_answers = get_user_answers();
     if (has_answered_all(user_answers)) 
@@ -46,7 +68,7 @@ async function calculate_results()
     }
 
     await suspense_time();
-    display_ranking(candidate_strings, candidate_parties);
+    display_ranking(candidate_strings, candidate_parties, img_links);
 
     set_mobile_link();
 }
@@ -170,23 +192,18 @@ function display_ranking(candidate_strings, candidate_parties)
     document.getElementById("winning_candidate").innerHTML = candidate_strings[index];
     document.getElementById("winning_party").innerHTML = candidate_parties[index];
     document.getElementById("winner_percent").innerHTML = get_affinity_percentage();
+    document.getElementById("winning_picture").src = img_links[index];
+
 }
 
 function get_gendered_article(name)
 {
     switch (name) 
     {
-        case "Tartaruga":
+        case "Roberta Leitão":
             return "a";
-        
-        case "Tigre":
-            return "o";
-
-        case "Passarinho":
-            return "o";
     
         default:
-            console.log("Unable to find gendered article. Check code.");
             return "o";
     }
 
@@ -209,7 +226,7 @@ function create_share_text()
                 + " " + winner_name 
                 + ", com " + get_affinity_percentage() 
                 + "% de afinidade."
-                + " Quer ver qual mais se encaixa contigo? Faça o teste: prefeitometro.vercel.app";
+                + " Quer ver qual mais se encaixa contigo? Faça o teste: prefeitometro.brizzigui.com";
 
     return text;
 }
