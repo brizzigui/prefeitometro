@@ -260,6 +260,14 @@ a.button:hover
     display: block;
 }
 
+@media (min-width: 1200px)
+{
+    .questionary
+    {
+        width: 900px;
+    }
+}
+
 .question_box
 {
     position: relative;
@@ -305,7 +313,7 @@ a.button:hover
 }
 
 
-@media (min-width: 700px)
+@media (min-width: 800px)
 {
     .all_options
     {
@@ -379,7 +387,7 @@ a.button:hover
     }
 }
 
-@media (min-width: 0px) and (max-width: 700px) 
+@media (min-width: 0px) and (max-width: 800px) 
 {
     .all_options
     {
@@ -523,8 +531,8 @@ a.button:hover
 
 .results_button.copied_confirmation
 {
-    background-color: rgb(30, 169, 56);
-    border: 2px solid rgb(51, 182, 66);
+    background-color: rgb(30, 169, 56) !important;
+    border: 2px solid rgb(51, 182, 66) !important;
 }
 
 
@@ -619,4 +627,30 @@ a.button:hover
     {
         display: block;
     }
+}
+
+.question_box.mini{
+    padding: 10px;
+}
+
+
+.rankname
+{
+    display: inline-block;
+    color: black;
+    font-family: 'Zilla Slab';
+    font-size: larger;
+    margin: 0;
+}
+
+.rankpercent
+{
+    margin: 0;
+    float: right;
+    text-align: right;
+    font-family: Lato;
+    font-weight: bold;
+    font-size: large;
+
+    color: black;
 }

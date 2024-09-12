@@ -11,9 +11,8 @@ const neutral = 2;
 const part_agr = 3;
 const full_agr = 4;
 
-const NUMBER_QUESTIONS = 3;
+const NUMBER_QUESTIONS = 15;
 
-let affinity_points = [0, 0, 0];
 const answer_indexes = ["full_dis", "part_dis", "neutral", "part_agr", "full_agr"];
 const img_links =   [
                     "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002149679/88412",
@@ -26,13 +25,13 @@ const img_links =   [
 
 ]
 
-const alidio_answers = [part_dis, part_agr, part_agr];
-const moacir_answers = [full_agr, full_dis, full_dis];
-const burmann_answers = [full_agr, part_dis, full_agr];
-const riesgo_answers = [part_dis, part_agr, part_agr];
-const roberta_answers = [full_agr, full_dis, full_dis];
-const decimo_answers = [full_agr, part_dis, full_agr];
-const valdeci_answers = [full_agr, part_dis, full_agr];
+const alidio_answers = [3, 2, 0, 4, 0, 3, 4, 1, 2, 4, 4, 2, 1, 4, 0];
+const moacir_answers = [1, 1, 3, 0, 1, 0, 2, 2, 0, 4, 4, 4, 0, 1, 0];
+const burmann_answers = [1, 3, 1, 0, 0, 4, 3, 0, 1, 2, 1, 1, 3, 3, 3];
+const riesgo_answers = [4, 1, 3, 4, 0, 0, 3, 1, 4, 0, 3, 3, 3, 1, 4];
+const roberta_answers = [0, 0, 1, 2, 2, 4, 1, 0, 0, 3, 3, 0, 2, 3, 4];
+const decimo_answers = [2, 1, 4, 3, 1, 4, 2, 2, 0, 0, 3, 1, 1, 3, 4];
+const valdeci_answers = [4, 1, 4, 1, 2, 1, 2, 4, 4, 1, 2, 4, 3, 4, 1];
 
 const alidio_just = ["Lorem ipsum", "sit amet", "dolor"];
 const moacir_just = ["Lorem ipsum", "sit amet", "dolor"];
@@ -46,29 +45,54 @@ function has_answered_all(user_answers) {
     return (user_answers.length == NUMBER_QUESTIONS) 
 }
 
+class Candidate
+{
+    constructor(answers, strings, parties, colors, points, justifications, img)
+    {
+        this.answers = answers;
+        this.strings = strings;
+        this.parties = parties;
+        this.colors = colors;
+        this.points = points;
+        this.justifications = justifications;
+        this.img = img
+    }
+
+}
+
+let candidates = []
 async function calculate_results()
 {
-    const candidate_answers = [alidio_answers, moacir_answers, burmann_answers, riesgo_answers, roberta_answers, decimo_answers, valdeci_answers];
-    const candidate_strings = ["Alidio da Luz", "Dr Moacir", "Professor Burmann", "Riesgo", "Roberta Leitão", "Rodrigo Decimo", "Valdeci Oliveira"];
-    const candidate_parties = ["PSOL", "PRD", "PDT", "NOVO", "PL", "PSDB", "PT"]
-    
+    candidates = []
+    candidates.push(new Candidate(alidio_answers, "Alidio da Luz", "PSOL", ["#fce186", "#fad457", "#f0c53a"], 0, alidio_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002149679/88412"))
+    candidates.push(new Candidate(moacir_answers, "Dr Moacir", "PRD", ["#b0b3f7", "#7c82fc", "#373fdb"], 0, moacir_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002341283/88412"))
+    candidates.push(new Candidate(burmann_answers, "Professor Burmann", "PDT", ["#f59ab7", "#f06e97", "#cc3162"], 0, burmann_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002148504/88412"))
+    candidates.push(new Candidate(riesgo_answers, "Riesgo", "NOVO", ["#edb88a", "#f0984d", "#e07214"], 0, riesgo_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002188556/88412"))
+    candidates.push(new Candidate(roberta_answers, "Roberta Leitão", "PL", ["#94f294", "#59d459", "#0c780c"], 0, roberta_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210001995616/88412"))
+    candidates.push(new Candidate(decimo_answers, "Rodrigo Decimo", "PSDB", ["#90c9f0", "#65b7f0", "#167ec7"], 0, decimo_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002189747/88412"))
+    candidates.push(new Candidate(valdeci_answers, "Valdeci Oliveira", "PT", ["#fc9d9d", "#f06060", "#c91010"], 0, valdeci_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210001964902/88412"))
+
+
     let user_answers = get_user_answers();
-    if (has_answered_all(user_answers)) 
+    if (!has_answered_all(user_answers)) 
     {
         alert("Você deve responder a todas as perguntas antes de terminar o teste.");
         return;
     }
 
-    for (let i = 0; i < candidate_answers.length; i++) 
+    for (let i = 0; i < candidates.length; i++) 
     {
         for (let j = 0; j < user_answers.length; j++) 
         {
-            affinity_points[i] += calculate_points(candidate_answers[i][j], user_answers[j]);
+            candidates[i].points += calculate_points(candidates[i].answers[j], user_answers[j]);
         }
     }
 
+    candidates.sort((a, b) => b.points - a.points);
+
     await suspense_time();
-    display_ranking(candidate_strings, candidate_parties, img_links);
+    display_ranking(candidates);
+    generate_answer_boxes(candidates);
 
     set_mobile_link();
 }
@@ -76,26 +100,7 @@ async function calculate_results()
 function calculate_points(answer_A, answer_B)
 {
     let diff = Math.abs(answer_A - answer_B);
-
-    switch (diff) {
-        case 0:
-            return 10;
-
-        case 1:
-            return 5;
-
-        case 2:
-            return 3;
-        
-        case 3:
-            return 1;
-
-        case 4:
-            return 0;
-    
-        default:
-            return 0;
-    }
+    return (5-diff-1);
 }
 
 function get_user_answers()
@@ -145,25 +150,25 @@ async function suspense_time()
     document.getElementById("questionary").style.display = "none";
     document.getElementById("fake_wait").style.display = "block";
 
-    await new Promise(r => setTimeout(r, 1000));
+    // await new Promise(r => setTimeout(r, 1000));
 
     document.getElementById("calculating_message").innerHTML = "Comparando candidatos...";
     document.getElementById("progress_bar").style.width = "40%";
 
-    await new Promise(r => setTimeout(r, 1000));
+    // await new Promise(r => setTimeout(r, 1000));
 
     document.getElementById("progress_bar").style.width = "60%";
 
-    await new Promise(r => setTimeout(r, 1000));
+    // await new Promise(r => setTimeout(r, 1000));
 
     document.getElementById("calculating_message").innerHTML = "Somando pontuações...";
     document.getElementById("progress_bar").style.width = "90%"
 
-    await new Promise(r => setTimeout(r, 1500));
+    // await new Promise(r => setTimeout(r, 1500));
 
     document.getElementById("progress_bar").style.width = "99%"
 
-    await new Promise(r => setTimeout(r, 500));
+    // await new Promise(r => setTimeout(r, 500));
 
     document.getElementById("fake_wait").style.display = "none";
 }
@@ -184,13 +189,20 @@ function index_max_array(arr)
     return best_index;
 }
 
-function display_ranking(candidate_strings, candidate_parties)
+function display_ranking(candidates)
 {
-    let index = index_max_array(affinity_points);
-    document.getElementById("winning_candidate").innerHTML = candidate_strings[index];
-    document.getElementById("winning_party").innerHTML = candidate_parties[index];
-    document.getElementById("winner_percent").innerHTML = get_affinity_percentage();
-    document.getElementById("winning_picture").src = img_links[index];
+    document.getElementById("winning_candidate").innerHTML = candidates[0].strings;
+    document.getElementById("winning_candidate").style.color = candidates[0].colors[2];
+    document.getElementById("winning_party").innerHTML = candidates[0].parties;
+    document.getElementById("winner_percent").innerHTML = get_affinity_percentage(candidates, 0);
+    document.getElementById("winning_picture").src = candidates[0].img;
+    document.getElementById("winning_picture").style.borderColor = candidates[0].colors[2];
+
+    document.getElementById("desktop_sharing").style.backgroundColor = candidates[0].colors[2];
+    document.getElementById("desktop_sharing").style.borderColor = candidates[0].colors[1];
+
+    document.getElementById("mobile_sharing").style.backgroundColor = candidates[0].colors[2];
+    document.getElementById("mobile_sharing").style.borderColor = candidates[0].colors[1];
     
     document.getElementById("results").style.display = "block";
 }
@@ -208,22 +220,21 @@ function get_gendered_article(name)
 
 }
 
-function get_affinity_percentage()
+function get_affinity_percentage(candidates, index)
 {
-    let index = index_max_array(affinity_points);
-    let percent = (affinity_points[index] / 30)*100
+    let percent = (candidates[index].points / (4*NUMBER_QUESTIONS))*100
     percent = Math.round(percent * 100) / 100;
 
     return percent;
 }
 
-function create_share_text()
+function create_share_text(candidates)
 {
     let winner_name = document.getElementById("winning_candidate").innerHTML;
     let text = "Acabei de fazer o Prefeitômetro e meu candidato deu " 
                 + get_gendered_article(winner_name) 
                 + " " + winner_name 
-                + ", com " + get_affinity_percentage() 
+                + ", com " + get_affinity_percentage(candidates, 0) 
                 + "% de afinidade."
                 + " Quer ver qual mais se encaixa contigo? Faça o teste: prefeitometro.brizzigui.com";
 
@@ -238,7 +249,7 @@ function copy_to_user_clipboard(text)
 
 function copy_share_link()
 {
-    let text = create_share_text();
+    let text = create_share_text(candidates);
     copy_to_user_clipboard(text);
 
     document.getElementById("desktop_sharing").className = "results_button copied_confirmation";
@@ -249,8 +260,26 @@ function copy_share_link()
 
 function set_mobile_link()
 {
-    let text = create_share_text();
+    let text = create_share_text(candidates);
     text = "whatsapp://send?text=" + text;
 
     document.getElementById("mobile_sharing").href = text;
+}
+
+
+function generate_answer_boxes(candidates)
+{
+    let box = document.getElementById("others_affinity")
+    for (let i = 0; i < candidates.length; i++) {
+        console.log(candidates[i].colors[1]);
+        box.innerHTML += ('<div class="question_box mini" ' +
+                    'style="margin-top:0px; margin-bottom:10px;' +
+                    'background: ' + candidates[i].colors[0] + ';' +
+                    'background: linear-gradient(90deg, ' + candidates[i].colors[0] + ' 50%, ' + candidates[i].colors[1] + ' 100%); border-color:' + candidates[i].colors[1] +';"' +
+                    'id="rank' + i +'">' +
+                    '<p class="rankname">' + (i+1) + ". " + candidates[i].strings + '</p>' +
+                    '<p class="rankpercent">' + get_affinity_percentage(candidates, i).toFixed(0) + '%' + `</p>` +
+                '</div>')
+    }
+
 }
