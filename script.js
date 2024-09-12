@@ -25,6 +25,24 @@ const img_links =   [
 
 ]
 
+const question_strings =
+["O transporte coletivo (ex: ônibus) deve ser priorizado sobre o transporte particular (ex: carros, motos). ",
+    "O orçamento do munícipio deve priorizar a educação. ",
+    "O município deve priorizar a redução de impostos, custe o que custar. ",
+    "A cidade deve ter mais vias com faixa exclusiva para bicicletas. ",
+    "O plano diretor deve ser flexibilizado a fim de permitir edifícios mais altos em mais regiões da cidade. ",
+    "A prefeitura deve taxar fortemente imóveis abandonados ou subutilizados. ",
+    "Moradores de rua devem ser retirados compulsoriamente. ",
+    "A implementação de radares de velocidade é benéfica para o trânsito. ",
+    "A prefeitura deve incentivar ações culturais financeiramente. ",
+    "O investimento na renovação do centro antigo (gare, praça, calçadão) foi uma boa política. ",
+    "O combate ao crime deve vir antes dos direitos humanos. ",
+    "A proibição do consumo de bebidas alcoólicas na rua após certo horário foi uma medida correta. ",
+    "A prefeitura tem negligenciado os bairros periféricos da cidade.",
+    "Pessoas em imóveis irregulares (ocupações) devem ser retiradas. ",
+    "O financiamento e envolvimento da prefeitura na Calourada na Gare foi positivo. "
+]
+
 const alidio_answers = [3, 2, 0, 4, 0, 3, 4, 1, 2, 4, 4, 2, 1, 4, 0];
 const moacir_answers = [1, 1, 3, 0, 1, 0, 2, 2, 0, 4, 4, 4, 0, 1, 0];
 const burmann_answers = [1, 3, 1, 0, 0, 4, 3, 0, 1, 2, 1, 1, 3, 3, 3];
@@ -93,6 +111,7 @@ async function calculate_results()
     await suspense_time();
     display_ranking(candidates);
     generate_answer_boxes(candidates);
+    generate_review_boxes(candidates, user_answers)
 
     set_mobile_link();
 }
@@ -203,6 +222,11 @@ function display_ranking(candidates)
 
     document.getElementById("mobile_sharing").style.backgroundColor = candidates[0].colors[2];
     document.getElementById("mobile_sharing").style.borderColor = candidates[0].colors[1];
+
+    if (candidates[0].strings == "Roberta Leitão")
+    {
+        document.getElementById("grand_winning_text").innerHTML = "A candidata que mais se encaixa com você é"
+    }
     
     document.getElementById("results").style.display = "block";
 }
@@ -277,9 +301,101 @@ function generate_answer_boxes(candidates)
                     'background: ' + candidates[i].colors[0] + ';' +
                     'background: linear-gradient(90deg, ' + candidates[i].colors[0] + ' 50%, ' + candidates[i].colors[1] + ' 100%); border-color:' + candidates[i].colors[1] +';"' +
                     'id="rank' + i +'">' +
-                    '<p class="rankname">' + (i+1) + ". " + candidates[i].strings + '</p>' +
+                    '<p class="rankname">' + (i+1) + ". " + candidates[i].strings + '<span style="font-family:Lato;font-size:small;color:#242424;white-space: pre;">' + "  " + candidates[i].parties + '</span>' +'</p>' +
                     '<p class="rankpercent">' + get_affinity_percentage(candidates, i).toFixed(0) + '%' + `</p>` +
                 '</div>')
     }
+
+}
+
+function get_icon_tag(answer)
+{
+    switch (answer) {
+        case full_dis:
+            return `<img class="review_quick_img" src="./assets/cross.png">
+                    <img class="review_quick_img" src="./assets/cross.png">`;
+
+        case part_dis:
+            return `<img class="review_quick_img" src="./assets/cross.png">`;
+
+        case neutral:
+            return `<img class="review_quick_img" src="./assets/black-circle.png">`;
+
+        case part_agr:
+            return `<img class="review_quick_img" src="./assets/done-tick.png">`;
+
+        case full_agr:
+            return `<img class="review_quick_img" src="./assets/done-tick.png">
+                    <img class="review_quick_img" src="./assets/done-tick.png">`;
+    }
+}
+
+function get_label_tag(answer)
+{
+    switch (answer) {
+        case full_dis:
+            return "Discordo totalmente";
+
+        case part_dis:
+            return "Discordo parcialmente";
+
+        case neutral:
+            return "Neutro";
+
+        case part_agr:
+            return "Concordo parcialmente";
+
+        case full_agr:
+            return "Concordo totalmente";
+    }
+}
+
+function generate_review_boxes(candidates, user_answers)
+{
+    let box = document.getElementById("comparisons");
+    for (let q = 0; q < NUMBER_QUESTIONS; q++) {
+        let acc = "";
+
+        // first we get and display the user's answer
+        let string = `<div class="question_box mini">
+        <p class="question_counter" style="left: 11px;">${q+1}/15</p>
+
+        <p class="question_text">${question_strings[q]}</p>
+        <div class="question_box mini" style="padding: 0;">
+            <div class="answer_review_quick" style="width:100%; border-radius:3px; padding-left:0; padding-right:0;">
+                <p class="review_quick_name" style="font-size:large;"><span class="actual_name" style="font-size:larger;">você</span> marcou: </p>
+                <div class="review_quick_container_img">
+                    ${get_icon_tag(user_answers[q])}
+                </div>
+                <p class="review_quick_label">${get_label_tag(user_answers[q])}</p>
+            </div>
+        </div>`;
+
+        acc += string;
+
+
+        for (let c = 0; c < candidates.length; c++) 
+        {
+            string = `
+            <div class="question_box mini" style="padding: 0; display: flex; background-color:${candidates[c].colors[0]}; border-color: ${candidates[c].colors[2]};">
+                <div class="answer_review_quick" style="background-color:${candidates[c].colors[1]}">
+                    <p class="review_quick_name"><span class="actual_name">${candidates[c].strings}</span> marcou: </p>
+                    <div class="review_quick_container_img">
+                        ${get_icon_tag(candidates[c].answers[q])}
+
+                    </div>
+                    <p class="review_quick_label">${get_label_tag(candidates[c].answers[q])}</p>
+                </div>
+                <p class="explanation"><strong>Justificativa: </strong>${candidates[c].justifications[q]}</p>
+            </div>
+            `;
+
+            acc += string;
+        }
+
+        acc += "</div>";
+        box.innerHTML += acc;
+    }
+
 
 }

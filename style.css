@@ -631,6 +631,7 @@ a.button:hover
 
 .question_box.mini{
     padding: 10px;
+    position: relative;
 }
 
 
@@ -640,7 +641,8 @@ a.button:hover
     color: black;
     font-family: 'Zilla Slab';
     font-size: larger;
-    margin: 0;
+    margin: 0;  
+    margin-right: 35px;
 }
 
 .rankpercent
@@ -650,7 +652,61 @@ a.button:hover
     text-align: right;
     font-family: Lato;
     font-weight: bold;
-    font-size: large;
+    font-size: medium;
 
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
     color: black;
+
+    overflow: visible;
+}
+
+.answer_review_quick
+{
+    margin: 0;
+    width: 30%;
+    min-height: 100%;
+    background-color: lightgray;
+    flex: 0 0 30%;
+    border-radius: 4px 0px 0px 4px;
+    padding: 5px;
+}
+
+.actual_name
+{
+    font-family: "Zilla Slab", serif;
+    font-size: large;
+}
+
+.review_quick_name
+{
+    text-align: center;
+}
+
+.review_quick_container_img
+{
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+
+.review_quick_img
+{
+    width: 25px;
+    display: inline-block;
+}
+
+.review_quick_label
+{
+    text-align: center;
+    font-size: small;
+}
+
+.explanation
+{
+    margin: 10px;
+
+    font-size: small;
 }
