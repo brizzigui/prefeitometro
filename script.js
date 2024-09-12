@@ -169,25 +169,25 @@ async function suspense_time()
     document.getElementById("questionary").style.display = "none";
     document.getElementById("fake_wait").style.display = "block";
 
-    // await new Promise(r => setTimeout(r, 1000));
+    await new Promise(r => setTimeout(r, 1000));
 
     document.getElementById("calculating_message").innerHTML = "Comparando candidatos...";
     document.getElementById("progress_bar").style.width = "40%";
 
-    // await new Promise(r => setTimeout(r, 1000));
+    await new Promise(r => setTimeout(r, 1000));
 
     document.getElementById("progress_bar").style.width = "60%";
 
-    // await new Promise(r => setTimeout(r, 1000));
+    await new Promise(r => setTimeout(r, 1000));
 
     document.getElementById("calculating_message").innerHTML = "Somando pontuações...";
     document.getElementById("progress_bar").style.width = "90%"
 
-    // await new Promise(r => setTimeout(r, 1500));
+    await new Promise(r => setTimeout(r, 1500));
 
     document.getElementById("progress_bar").style.width = "99%"
 
-    // await new Promise(r => setTimeout(r, 500));
+    await new Promise(r => setTimeout(r, 500));
 
     document.getElementById("fake_wait").style.display = "none";
 }
