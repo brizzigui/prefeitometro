@@ -668,7 +668,6 @@ a.button:hover
     margin: 0;
     width: 30%;
     min-height: 100%;
-    background-color: lightgray;
     flex: 0 0 30%;
     border-radius: 4px 0px 0px 4px;
     padding: 5px;

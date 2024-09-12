@@ -353,16 +353,17 @@ function get_label_tag(answer)
 function generate_review_boxes(candidates, user_answers)
 {
     let box = document.getElementById("comparisons");
+    box.innerHTML += "<hr style='margin-bottom:50px;margin-top:-15px;'>"
     for (let q = 0; q < NUMBER_QUESTIONS; q++) {
         let acc = "";
 
         // first we get and display the user's answer
-        let string = `<div class="question_box mini">
-        <p class="question_counter" style="left: 11px;">${q+1}/15</p>
+        let string = `<div style="position:relative;">
+        <p class="question_counter" style="left: 0px; top:-35px;">${q+1}/15</p>
 
         <p class="question_text">${question_strings[q]}</p>
-        <div class="question_box mini" style="padding: 0;">
-            <div class="answer_review_quick" style="width:100%; border-radius:3px; padding-left:0; padding-right:0;">
+        <div class="question_box mini" style="padding: 0; background-color:lightgray;">
+            <div class="answer_review_quick" style="width:100%; border-radius:3px; padding-left:0; padding-right:0; margin-bottom:7px;">
                 <p class="review_quick_name" style="font-size:large;"><span class="actual_name" style="font-size:larger;">você</span> marcou: </p>
                 <div class="review_quick_container_img">
                     ${get_icon_tag(user_answers[q])}
@@ -377,7 +378,7 @@ function generate_review_boxes(candidates, user_answers)
         for (let c = 0; c < candidates.length; c++) 
         {
             string = `
-            <div class="question_box mini" style="padding: 0; display: flex; background-color:${candidates[c].colors[0]}; border-color: ${candidates[c].colors[2]};">
+            <div class="question_box mini" style="padding: 0; display: flex; background-color:${candidates[c].colors[0]}; border-color: ${candidates[c].colors[2]}; margin-bottom:7px;">
                 <div class="answer_review_quick" style="background-color:${candidates[c].colors[1]}">
                     <p class="review_quick_name"><span class="actual_name">${candidates[c].strings}</span> marcou: </p>
                     <div class="review_quick_container_img">
@@ -393,7 +394,7 @@ function generate_review_boxes(candidates, user_answers)
             acc += string;
         }
 
-        acc += "</div>";
+        acc += "</div><hr style='margin-bottom:50px; margin-top:50px;'>";
         box.innerHTML += acc;
     }
 
