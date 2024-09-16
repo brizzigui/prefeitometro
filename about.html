@@ -55,7 +55,7 @@
                 <p>A cada resposta, será atribuida uma pontuação de sua afinidade com o candidato.</p>
                 <p>Ao fim do quiz, geraremos um ranking dos candidatos que mais se encaixam com você.</p>
                 <p>Nosso ranking é apenas para fins lúdicos e informativos - lembre-se: seu voto é único e secreto.</p>
-                <p>Encontrou bugs? Mande um email para <a href="mailto:brizzigui@gmail.com">brizzigui@gmail.com</a>, e eu tentarei corrigí-lo o mais rápido possível.</p>
+                <p>Encontrou bugs? Mande um email para <a href="mailto:prefeitometro@brizzigui.com">prefeitometro@brizzigui.com</a>, e eu tentarei corrigí-lo o mais rápido possível.</p>
             </div>
 
             <div class="question_box">
@@ -64,6 +64,14 @@
                 </h1>   
                 
                 <hr>
+
+                <p class="question_text">
+                    De onde vêm as respostas dos candidatos?
+                </p>
+                <p class="question_answer">
+                    As respostas foram obtidas diretamente das campanhas dos respectivos candidatos.
+                </p>
+
                 <p class="question_text">
                     Você recebe dinheiro de alguma campanha?
                 </p>
@@ -75,7 +83,15 @@
                     Posso saber como os resultados são calculados?
                 </p>
                 <p class="question_answer">
-                    Sim - acesse o <a href="https://github.com/brizzigui/prefeitometro">repositório no GitHub</a>.
+                    Sim - é calculada a distância entre a sua resposta e a de cada candidato.
+                </p>
+                <p class="question_answer">
+                    Por exemplo, se você <i>concorda totalmente</i> e o candidato A é <i>neutro</i>, há uma distância de <i>2</i> entre as respotas.
+                    A cada pergunta, é atribuída uma pontuação de sua afinidade com o candidato - conforme a fórmula <i>(4 - d)</i>, onde d é a distância.
+                    O percentual mostrado ao usuário corresponde a essa pontuação dividida pela pontuação máxima. 
+                </p>
+                <p class="question_answer">
+                    Para maiores detalhes, veja o código no <a href="https://github.com/brizzigui/prefeitometro">repositório no GitHub</a>.
                 </p>
 
                 <p class="question_text">

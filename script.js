@@ -394,7 +394,12 @@ function generate_review_boxes(candidates, user_answers)
             acc += string;
         }
 
-        acc += "</div><hr style='margin-bottom:50px; margin-top:50px;'>";
+        acc += "</div>";
+        if(q < 14)
+        {
+            acc += "<hr style='margin-bottom:50px; margin-top:50px;'>"
+        }
+        
         box.innerHTML += acc;
     }
 
