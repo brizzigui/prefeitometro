@@ -43,20 +43,54 @@ const question_strings =
     "O financiamento e envolvimento da prefeitura na Calourada na Gare foi positivo. "
 ]
 
-const alidio_answers = [3, 2, 0, 4, 0, 3, 4, 1, 2, 4, 4, 2, 1, 4, 0];
+const alidio_answers = [full_agr, full_agr, full_agr, full_agr, part_dis, full_agr, full_dis, part_agr, full_agr, part_agr, full_dis, full_dis, full_agr, full_dis, part_agr];
 const moacir_answers = [1, 1, 3, 0, 1, 0, 2, 2, 0, 4, 4, 4, 0, 1, 0];
 const burmann_answers = [1, 3, 1, 0, 0, 4, 3, 0, 1, 2, 1, 1, 3, 3, 3];
 const riesgo_answers = [4, 1, 3, 4, 0, 0, 3, 1, 4, 0, 3, 3, 3, 1, 4];
 const roberta_answers = [0, 0, 1, 2, 2, 4, 1, 0, 0, 3, 3, 0, 2, 3, 4];
-const decimo_answers = [2, 1, 4, 3, 1, 4, 2, 2, 0, 0, 3, 1, 1, 3, 4];
+const decimo_answers = [part_agr, full_agr, neutral, full_agr, neutral, part_dis, full_dis, full_agr, full_agr, full_agr, neutral, neutral, full_dis, part_agr, full_agr];
 const valdeci_answers = [4, 1, 4, 1, 2, 1, 2, 4, 4, 1, 2, 4, 3, 4, 1];
 
-const alidio_just = ["Lorem ipsum", "sit amet", "dolor"];
+const alidio_just = 
+["Uma mobilidade urbana que tem como prioridade o transporte coletivo, contribui para um trânsito melhor e também uma cidade ambientalmente mais sustentável. Defendemos também a Tarifa Zero, que a mobilidade seja um meio de acesso de todos à toda cidade.",
+    "Um município com investimento em educação é um município que se prepara para o futuro, diminui os índices de criminalidade e aposta na emancipação do sujeito.",
+    "E é preciso se trabalhar em uma lógica de justiça tributária que não penalize os mais pobres, fazendo com que os impostos correspondam à renda.",
+    "Um meio de mobilidade alternativo faz parte da ideia de uma cidade sustentável.",
+    "É preciso ter cuidado com esse tipo de modificação para que os interesses das construtoras não se sobreponha a preservação ambiental e do patrimônio histórico da cidade.",
+    "O imóvel deve cumprir a sua função social. Imóveis apenas para a especulação imobiliária enquanto existem famílias sem moradia é inadmissível.",
+    "A retirada compulsória responde a uma política higienista e elitista. É preciso estabelecer um diálogo e alternativas apontadas por profissionais e as pessoas em situação de rua, observando e respeitando os indivíduos. ",
+    "A implementação deve ser técnica e responder à uma demanda real.",
+    "O fomento a cultura deve ser prioridade em um governo, criando condições para os fazedores de cultura e também aperfeiçoando seus aparelhos.",
+    "É importante para a valorização da nossa história e também para o comércio local, mas ainda não está claro a quais interesses podem servir. Deve ser voltado para a comunidade, e não um espaço que se reduza a iniciativa privada com acessos restritos.",
+    "O respeito à pessoa humana e a dignidade, assim como todos os direitos assegurados pela constituição devem ser respeitados. Ninguém está acima ou abaixo da lei.",
+    "Uma lei ineficaz e que aumenta a possibilidade de perseguição contra a população jovem, negra e periférica. É preciso se rediscutir essa lei, observando locais que devem ser preservados e locais que permitam uma maior circulação.",
+    "É um governo que só olha o centro e apenas em ano eleitoral.",
+    "As áreas devem ser regularizadas e o município tem que dar as condições para o direito a moradia.",
+    "O município deve ser parte da organização, mas sem tirar a autonomia das entidades organizadoras."
+
+];
 const moacir_just = ["Lorem ipsum", "sit amet", "dolor"];
 const burmann_just = ["Lorem ipsum", "sit amet", "dolor"];
 const riesgo_just = ["Lorem ipsum", "sit amet", "dolor"];
 const roberta_just = ["Lorem ipsum", "sit amet", "dolor"];
-const decimo_just = ["Lorem ipsum", "sit amet", "dolor"];
+const decimo_just = 
+[
+    "O incentivo ao uso do transporte coletivo como meio de locomoção é uma maneira de reduzirmos o trânsito de veículos na cidade. Sabendo disso, estamos concluindo o processo de licitação do transporte público de Santa Maria para melhorar o serviço prestado à população. Também não podemos ignorar que o transporte via aplicativos cresceu após a pandemia, sobretudo entre os jovens. Portanto é necessário organizar e regularizar o serviço no Município.",
+    "Avançamos muito na Educação, com a construção de 10 novas escolas e uniformes para todos os 20 mil alunos da Rede Municipal de Ensino. Esses investimentos devem continuar na próxima gestão, avançando para as escolas de Tempo Integral e a ampliação até as 19h do horário das creches. O município investe 26,6% dos recursos na Educação, acima do que é obrigatório, que é 25%.",
+    "Compreendemos que a cobrança dos impostos se faz necessária para que sejam mantidos os serviços à população. A prioridade do poder público é obter recursos para otimizar os serviços oferecidos nas áreas da Saúde, Educação e Segurança.",
+    "As novas grandes obras de infraestrutura estão sendo executadas com ciclovias para o uso de bicicletas, como por exemplo a Perimetral Dom Ivo Lorscheiter e a Perimetral Sul-Leste. ",
+    "A partir de janeiro de 2025, a nossa proposta é que Instituto de Planejamento (Iplan) comece a elaborar o Novo Plano Diretor de Santa Maria, que deve apontar quais as necessidades e gargalos do município em relação a este tema. O estudo dará elementos para balizar um projeto para Santa Maria nos próximos 50 anos. Da mesma forma, o tema merece uma atenção especial em relação às áreas de encostas e áreas de preservação permanente.",
+    "A taxa cobrada aos imóveis é compatível com a área do imóvel, não havendo espaço para interferência da Administração Municipal quanto à utilização do espaço. Ainda assim, cabe ao Poder Público realizar ações que evitem o abandono de imóveis.",
+    "Todo trabalho feito com as pessoas em situação de rua é realizado com muito diálogo. As iniciativas realizadas devem levar em consideração a vontade destas pessoas. Porém, vamos criar o Centro de Referência Especializado para a População em Situação de Rua (Centro POP), onde serão oferecidos atendimentos, oficinas e atividades de convivência para pessoas em situação de rua.",
+    "A fiscalização eletrônica é uma forma de combater o excesso de velocidade no trânsito. Implementamos no governo as escolinhas de trânsito, com o objetivo de conscientizar crianças, adolescentes e adultos. Com isso, reduzimos o número de acidentes em Santa Maria.",
+    "No nosso município, a cultura é valorizada grandemente, o que reflete no incentivo financeiros a estas ações. Nossa Lei de Incentivo à Cultura (LIC) é uma das maiores do Estado, inclusive com edital já lançado para 2025 (serão R$ 2,1 milhão dividido entre as propostas vencedoras). Também valorizamos eventos culturais, como o Viva o Natal, a Tertúlia e o Festival do Xis, entre outros.",
+    "A revitalização do Centro-Histórico de Santa Maria, atrelada à criação do Distrito Criativo Centro-Gare, trouxe uma série de benefícios para a cidade. Passamos a ter um centro mais vivo, com excelentes espaços de lazer, comércio e serviços efervescidos, incentivo à inovação e à economia criativa. Por isso, foi a nossa gestão que revitalizou a Praça Saldanha Marinho, o Calçadão e entregará em outubro a Gare totalmente restaurada. Ainda, começaremos a revitalização da Casa de Cultura e, em breve, da SUCV.",
+    "O combate ao crime e os direitos humanos não podem ser entendidos como antagonistas. Avançamos muito em segurança, com a criação do Centro Integrado de Operações de Segurança Pública (Ciosp), com mais de 1,5 mil câmeras de videomonitoramento. Criaremos a Secretaria de Segurança Pública e implementaremos o Tempo Integral nas escolas, garantindo que as crianças e o adolescentes estejam nas escolas e em segurança.",
+    "A medida já foi compreendida pela população, o que se deve ao trabalho de conscientização sobre a lei, antes das autuações serem feitas. Com mais de um ano da lei plenamente em vigor, não foram constatados problemas em grande escala, o que demonstra a compreensão da comunidade quanto a lei.",
+    "Ao longo da nossa gestão, realizamos inúmeras ações culturais, educativas e obras de Infraestrutura. Na região Oeste, construímos uma nova Estratégia Saúde da Família (ESF) e uma nova Escola de Educação Infantil. Na região Sul, estamos construindo uma Unidade Básica de Saúde (UBS) e ainda faremos uma sede do Centro de Referência de Assistência Social (CRAS) e uma sede do Conselho Tutelar. No Norte, entregamos a UBS Estação dos Ventos, melhoramos as atividades do Clube 21 de abril e transformaremos a Unidade de Pronto-Atendimento (UPA) 24 horas em uma UPA Regional. Para a região Leste, entregamos uma nova creche e construiremos uma unidade de Pronto-atendimento. Além disso, todas as regiões serão atendidas pelas Patrulhas de Zeladorias nos Bairros, medida que vai garantir a manutenção dos espaços públicos de Santa Maria.",
+    "O município é responsável por fiscalizar e evitar ocupações em áreas públicas da cidade, sobretudo em áreas de risco. Paralelamente a isso, também é papel do Poder Público avançar na regularização fundiária das áreas que podem ser habitadas pela população. ",
+    "Com a realização da Calourada na Gare conseguimos solucionar o problema antigo de pertubação de sossego da população na Praça Saturnino de Brito. Mas, o principal é que conseguimos garantir a segurança dos jovens que vão até o evento. O trabalho conjunto de diferentes forças de segurança e o videomonitoramento em tempo real são um dos fatores para que este sucesso fosse alcançado."
+];
 const valdeci_just = ["Lorem ipsum", "sit amet", "dolor"];
 
 function has_answered_all(user_answers) {
