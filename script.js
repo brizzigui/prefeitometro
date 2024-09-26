@@ -1,8 +1,7 @@
 /*
-    Many of the arrays used to calculate
-    affinity here are mere placeholders that
-    must be altered when real answers
-    are made available.
+    Script for the computing and display of test results of prefeitometro.com
+    
+    by Guilherme Brizzi
 */
 
 const full_dis = 0;
