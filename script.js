@@ -43,10 +43,10 @@ const question_strings =
 ]
 
 const alidio_answers = [full_agr, full_agr, full_agr, full_agr, part_dis, full_agr, full_dis, part_agr, full_agr, part_agr, full_dis, full_dis, full_agr, full_dis, part_agr];
-const moacir_answers = [1, 1, 3, 0, 1, 0, 2, 2, 0, 4, 4, 4, 0, 1, 0];
+const moacir_answers = [];
 const burmann_answers = [full_agr, full_agr, full_dis, full_agr, full_dis, part_agr, full_dis, part_dis, full_agr, part_dis, full_dis, part_agr, full_agr, part_dis, part_dis];
 const riesgo_answers = [neutral, full_agr, part_agr, full_agr, full_agr, full_dis, part_dis, part_dis, part_agr, part_agr, part_agr, full_dis, full_agr, part_agr, neutral];
-const roberta_answers = [4,4,4,4,4,4,4,4,4,4,4,4,4,4,4];
+const roberta_answers = [4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]; // must be changed
 const decimo_answers = [part_agr, full_agr, neutral, full_agr, neutral, part_dis, full_dis, full_agr, full_agr, full_agr, neutral, neutral, full_dis, part_agr, full_agr];
 const valdeci_answers = [full_agr, part_agr, part_dis, full_agr, part_dis, part_agr, full_dis, full_agr, full_agr, part_agr, full_dis, full_agr, full_agr, part_dis, part_agr];
 
@@ -68,7 +68,8 @@ const alidio_just =
     "O município deve ser parte da organização, mas sem tirar a autonomia das entidades organizadoras."
 
 ];
-const moacir_just = ["Lorem ipsum", "sit amet", "dolor"];
+const moacir_just = [];
+
 const burmann_just = 
 ["Sem dúvidas - tendo um transporte coletivo abrangente e eficaz, as pessoas vão preferir deixar seus carros em casa. Transporte público de qualidade melhora a mobilidade, a economia e o ambiente.", 
     "Sou um defensor da educação - gestão se faz com planejamento e planejamento pressupõe definir prioridades. A educação é prioridade. A educação integral, desde a infantil (0-6 anos), até o 9º ano projeta uma escola onde as crianças e jovens passem o dia inteiro, em segurança, aprendendo e se desenvolvendo. É necessário investir em programa de valorização e qualificação para todos os profissionais da educação, porque a escola não é feita só de paredes, mas de pessoas que se dedicam todos os dias para formar nossos jovens. Porque quem faz a educação é toda a comunidade escolar. Juntos, vamos transformar Santa Maria pela educação!", 
@@ -105,7 +106,7 @@ const riesgo_just =
     "A retirada da Calourada na Praça Saldanha Marinho, embora tenha gerado controvérsias, teve um impacto majoritariamente positivo para a população que mora na região central da cidade. É preciso avaliar de forma técnica se esse investimento público está tendo retorno para a população santa-mariense, ou se apenas gerando ônus, já que envolve um investimento alto da prefeitura em uma área não essencial."
 ];
 
-const roberta_just = ["Lorem ipsum", "sit amet", "dolor"];
+const roberta_just = ["Lorem ipsum", "sit amet", "dolor"]; // must be changed
 
 const decimo_just = 
 [
@@ -168,7 +169,8 @@ async function calculate_results()
 {
     candidates = []
     candidates.push(new Candidate(alidio_answers, "Alidio da Luz", "PSOL", ["#fce186", "#fad457", "#f0c53a"], 0, alidio_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002149679/88412"))
-    candidates.push(new Candidate(moacir_answers, "Dr Moacir", "PRD", ["#b0b3f7", "#7c82fc", "#373fdb"], 0, moacir_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002341283/88412"))
+    // Dr Moacir was removed due to failure to answer the questions in time.
+    // candidates.push(new Candidate(moacir_answers, "Dr Moacir", "PRD", ["#b0b3f7", "#7c82fc", "#373fdb"], 0, moacir_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002341283/88412"))
     candidates.push(new Candidate(burmann_answers, "Professor Burmann", "PDT", ["#f59ab7", "#f06e97", "#cc3162"], 0, burmann_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002148504/88412"))
     candidates.push(new Candidate(riesgo_answers, "Riesgo", "NOVO", ["#edb88a", "#f0984d", "#e07214"], 0, riesgo_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002188556/88412"))
     candidates.push(new Candidate(roberta_answers, "Roberta Leitão", "PL", ["#94f294", "#59d459", "#0c780c"], 0, roberta_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210001995616/88412"))
