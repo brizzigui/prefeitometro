@@ -347,7 +347,7 @@ function create_share_text(candidates)
                 + " " + winner_name 
                 + ", com " + get_affinity_percentage(candidates, 0) 
                 + "% de afinidade."
-                + " Quer ver qual mais se encaixa contigo? Faça o teste: prefeitometro.brizzigui.com";
+                + " Quer ver qual mais se encaixa contigo? Faça o teste: prefeitometro.com";
 
     return text;
 }
