@@ -173,7 +173,7 @@ async function calculate_results()
     // candidates.push(new Candidate(moacir_answers, "Dr Moacir", "PRD", ["#b0b3f7", "#7c82fc", "#373fdb"], 0, moacir_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002341283/88412"))
     candidates.push(new Candidate(burmann_answers, "Professor Burmann", "PDT", ["#f59ab7", "#f06e97", "#cc3162"], 0, burmann_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002148504/88412"))
     candidates.push(new Candidate(riesgo_answers, "Riesgo", "NOVO", ["#edb88a", "#f0984d", "#e07214"], 0, riesgo_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002188556/88412"))
-    candidates.push(new Candidate(roberta_answers, "Roberta Leitão", "PL", ["#94f294", "#59d459", "#0c780c"], 0, roberta_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210001995616/88412"))
+    // candidates.push(new Candidate(roberta_answers, "Roberta Leitão", "PL", ["#94f294", "#59d459", "#0c780c"], 0, roberta_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210001995616/88412"))
     candidates.push(new Candidate(decimo_answers, "Rodrigo Decimo", "PSDB", ["#90c9f0", "#65b7f0", "#167ec7"], 0, decimo_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002189747/88412"))
     candidates.push(new Candidate(valdeci_answers, "Valdeci Oliveira", "PT", ["#fc9d9d", "#f06060", "#c91010"], 0, valdeci_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210001964902/88412"))
 
