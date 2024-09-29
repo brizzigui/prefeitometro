@@ -392,7 +392,7 @@ function generate_answer_boxes(candidates)
                 '</div>')
     }
 
-    box.innerHTML += "<p style='font-size:small; color:gray;'>*Dr Moacir e Roberta Leitao se recusaram a responder, sendo excluídos.</p>"
+    box.innerHTML += "<p style='font-size:small; color:gray;'>*Dr Moacir e Roberta Leitão se recusaram a responder, sendo excluídos.</p>"
 }
 
 function get_icon_tag(answer)
