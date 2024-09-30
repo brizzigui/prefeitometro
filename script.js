@@ -46,7 +46,7 @@ const alidio_answers = [full_agr, full_agr, full_agr, full_agr, part_dis, full_a
 const moacir_answers = [];
 const burmann_answers = [full_agr, full_agr, full_dis, full_agr, full_dis, part_agr, full_dis, part_dis, full_agr, part_dis, full_dis, part_agr, full_agr, part_dis, part_dis];
 const riesgo_answers = [neutral, full_agr, part_agr, full_agr, full_agr, full_dis, part_dis, part_dis, part_agr, part_agr, part_agr, full_dis, full_agr, part_agr, neutral];
-const roberta_answers = [4,4,4,4,4,4,4,4,4,4,4,4,4,4,4]; // must be changed
+const roberta_answers = [neutral, full_agr, part_agr, full_agr, full_agr, full_agr, full_dis, part_agr, full_agr, part_dis, full_dis, full_dis, full_agr, part_dis, part_dis]; // must be changed
 const decimo_answers = [part_agr, full_agr, neutral, full_agr, neutral, part_dis, full_dis, full_agr, full_agr, full_agr, neutral, neutral, full_dis, part_agr, full_agr];
 const valdeci_answers = [full_agr, part_agr, part_dis, full_agr, part_dis, part_agr, full_dis, full_agr, full_agr, part_agr, full_dis, full_agr, full_agr, part_dis, part_agr];
 
@@ -106,7 +106,24 @@ const riesgo_just =
     "A retirada da Calourada na Praça Saldanha Marinho, embora tenha gerado controvérsias, teve um impacto majoritariamente positivo para a população que mora na região central da cidade. É preciso avaliar de forma técnica se esse investimento público está tendo retorno para a população santa-mariense, ou se apenas gerando ônus, já que envolve um investimento alto da prefeitura em uma área não essencial."
 ];
 
-const roberta_just = ["Lorem ipsum", "sit amet", "dolor"]; // must be changed
+const roberta_just = 
+[
+    "Neutro porque Santa Maria precisa de uma gestão que acomode com equilíbrio seus meios de transporte, de modo que haja fluidez, organização e sustentabilidade em meios públicos e privados",
+    "Concordo totalmente até porque já há esta prioridade imposta aos estados e municípios pela Constituição Federal, que determina que 25% das receitas devem ser aplicadas na manutenção e desenvolvimento do ensino, e também há o fator novo Fundeb.",
+    "Defendo o livre mercado, a redução de impostos, corte de gastos desnecessários, desburocratização da máquina pública e simplificação de processos, principalmente visando aqueles que geram ou pretendem gerar emprego, renda e desenvolvimento. Concordo parcialmente porque, evidentemente, qualquer gestor com estas ideias, mas também com senso de responsabilidade, entende que, caso a consequência da redução tributária seja o comprometimento de prestação de serviços públicos necessários à população, isso não pode ocorrer. É preciso reduzir impostos com lastro econômico, responsabilidade fiscal e sem comprometer serviços, sobretudo os básicos.",
+    "[não justificou]",
+    "Concordo totalmente, em pese o impeditivo para a construção de prédios maiores seja a infraestrutura do solo da cidade, que não comporta este tipo de engenharia, e não em razão do plano diretor.",
+    "Concordo totalmente, pois é necessária uma política urgente de estímulo para que esses imóveis abandonados não sigam trazendo prejuízos, como a frequente precariedade das calçadas, e principalmente porque esses imóveis acabam sendo utilizados para os mais variados atos ilícitos.",
+    "[não justificou]",
+    "É necessário um estudo técnico na cidade a fim de saber quais radares são mais efetivos na redução de acidentes de trânsito.",
+    "com a condição de que sejam ações essencialmente culturais, e não com pautas paralelas ao objetivo do incentivo.",
+    "O investimento na revitalização, não apenas do centro, mas de toda a infraestrutura da cidade, é urgente e extremamente necessário, mas não da forma pela qual a atual gestão promove estas ações. Obras extremamente elementares, com duração muito além do previsto e custo altíssimo. É preciso de obras de qualidade, dentro do prazo e com o menor custo possível para a administração, tudo ao contrário do que ocorre hoje.",
+    "Não há espaço na democracia para que os direito humanos sejam violados. Contudo, o combate ao crime deve ser rigoroso, com penas compatíveis com a gravidade do crime e, da mesma forma que não há espaço para violação de direitos humanos, também não pode haver de maneira nenhuma espaço para a impunidade.",
+    "Com fiscalizações intensas e constantes por parte das forças de segurança pública, o problema da perturbação do sossego seria facilmente resolvido sem que as liberdades dos cidadão fossem afetadas.",
+    "[não justificou]",
+    "É preciso que haja uma política habitacional forte e estratégica nesse sentido, a fim de proporcionar a alocação de pessoas de áreas de risco de vida e também daquelas áreas sem as mínimas condições de dignidade humana.",
+    "Dadas as dimensões e características do evento 'Calourada', a prefeitura deve sim se envolver e promover a segurança e estrutura do evento. Porém, hoje, o Poder Público tem gastos exorbitantes, deslocou o evento para a GARE, onde muitos criminosos frequentam o mesmo espaço que os estudantes, não há controle de venda de bebida alcoólica para menores de idade, dentre outros problemas. É preciso de um ambiente seguro, estrutura e segurança, de preferência em parceria com a iniciativa privada para que os gastos públicos sejam amenizados."
+];
 
 const decimo_just = 
 [
@@ -173,7 +190,7 @@ async function calculate_results()
     // candidates.push(new Candidate(moacir_answers, "Dr Moacir", "PRD", ["#b0b3f7", "#7c82fc", "#373fdb"], 0, moacir_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002341283/88412"))
     candidates.push(new Candidate(burmann_answers, "Professor Burmann", "PDT", ["#f59ab7", "#f06e97", "#cc3162"], 0, burmann_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002148504/88412"))
     candidates.push(new Candidate(riesgo_answers, "Riesgo", "NOVO", ["#edb88a", "#f0984d", "#e07214"], 0, riesgo_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002188556/88412"))
-    // candidates.push(new Candidate(roberta_answers, "Roberta Leitão", "PL", ["#94f294", "#59d459", "#0c780c"], 0, roberta_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210001995616/88412"))
+    candidates.push(new Candidate(roberta_answers, "Roberta Leitão", "PL", ["#94f294", "#59d459", "#0c780c"], 0, roberta_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210001995616/88412"))
     candidates.push(new Candidate(decimo_answers, "Rodrigo Decimo", "PSDB", ["#90c9f0", "#65b7f0", "#167ec7"], 0, decimo_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002189747/88412"))
     candidates.push(new Candidate(valdeci_answers, "Valdeci Oliveira", "PT", ["#fc9d9d", "#f06060", "#c91010"], 0, valdeci_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210001964902/88412"))
 
@@ -392,7 +409,7 @@ function generate_answer_boxes(candidates)
                 '</div>')
     }
 
-    box.innerHTML += "<p style='font-size:small; color:gray;'>*Dr Moacir e Roberta Leitão se recusaram a responder, sendo excluídos.</p>"
+    box.innerHTML += "<p style='font-size:small; color:gray;'>*Dr Moacir se recusou a responder, sendo excluído.</p>"
 }
 
 function get_icon_tag(answer)
