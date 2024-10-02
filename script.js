@@ -43,7 +43,7 @@ const question_strings =
 ]
 
 const alidio_answers = [full_agr, full_agr, full_agr, full_agr, part_dis, full_agr, full_dis, part_agr, full_agr, part_agr, full_dis, full_dis, full_agr, full_dis, part_agr];
-const moacir_answers = [full_agr, full_agr, full_agr, full_agr, full_agr, full_agr, full_dis, full_agr, full_agr, full_agr, full_dis, full_agr, full_agr, full_agr, full_agr];
+const moacir_answers = [full_agr, part_agr, part_agr, part_agr, full_agr, full_agr, full_dis, full_agr, full_agr, part_agr, full_dis, full_agr, full_agr, part_agr, full_agr];
 const burmann_answers = [full_agr, full_agr, full_dis, full_agr, full_dis, part_agr, full_dis, part_dis, full_agr, part_dis, full_dis, part_agr, full_agr, part_dis, part_dis];
 const riesgo_answers = [neutral, full_agr, part_agr, full_agr, full_agr, full_dis, part_dis, part_dis, part_agr, part_agr, part_agr, full_dis, full_agr, part_agr, neutral];
 const roberta_answers = [neutral, full_agr, part_agr, full_agr, full_agr, full_agr, full_dis, part_agr, full_agr, part_dis, full_dis, full_dis, full_agr, part_dis, part_dis]; // must be changed
@@ -203,7 +203,7 @@ async function calculate_results()
 {
     candidates = []
     candidates.push(new Candidate(alidio_answers, "Alidio da Luz", "PSOL", ["#fce186", "#fad457", "#f0c53a"], 0, alidio_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002149679/88412"))
-    //candidates.push(new Candidate(moacir_answers, "Dr Moacir", "PRD", ["#b0b3f7", "#7c82fc", "#373fdb"], 0, moacir_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002341283/88412"))
+    candidates.push(new Candidate(moacir_answers, "Dr Moacir", "PRD", ["#b0b3f7", "#7c82fc", "#373fdb"], 0, moacir_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002341283/88412"))
     candidates.push(new Candidate(burmann_answers, "Professor Burmann", "PDT", ["#f59ab7", "#f06e97", "#cc3162"], 0, burmann_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002148504/88412"))
     candidates.push(new Candidate(riesgo_answers, "Riesgo", "NOVO", ["#edb88a", "#f0984d", "#e07214"], 0, riesgo_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210002188556/88412"))
     candidates.push(new Candidate(roberta_answers, "Roberta Leitão", "PL", ["#94f294", "#59d459", "#0c780c"], 0, roberta_just, "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/img/2045202024/210001995616/88412"))
