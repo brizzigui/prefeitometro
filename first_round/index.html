@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+
+<html lang="pt_BR">
+    <head>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="../style.css">
+        <script src="./script.js"></script>
+
+        <title>Prefeitômetro - quiz eleitoral</title>
+
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.png"> 
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <div class="header">
+            <h1 class="title">
+                <a href="/" class="title">Prefeitômetro</a>
+            </h1>
+        </div>
+        
+        <div class="questionary" id="questionary">
+            <div class="question_box">
+                <h1 style="font-family: 'Zilla Slab', serif;">
+                    Como funciona?
+                </h1>
+                <hr>
+                <p>
+                    O quiz é composto por 15 perguntas relativas a temas da política municipal de Santa Maria.
+                </p>
+
+                <p>
+                    Você poderá respondê-las de 5 formas diferentes:
+                    <ul>
+                        <li>Discordo totalmente</li>
+                        <li>Discordo parcialmente</li>
+                        <li>Neutro</li>
+                        <li>Concordo parcialmente</li>
+                        <li>Concordo totalmente</li>
+                    </ul>
+                </p>
+
+                <p>A cada resposta, será atribuída uma pontuação de sua afinidade com o candidato.</p>
+                <p>Ao fim do quiz, geraremos um ranking dos candidatos que mais se encaixam com você.</p>
+                <p>Quer saber mais? Veja <a href="about.html">mais informações</a>.</p>
+            </div>
+
+            <div class="question_box" id="question_01">
+                <p class="question_text">
+                    O transporte coletivo (ex: ônibus) deve ser priorizado sobre o transporte particular (ex: carros, motos).
+                </p>
+                  
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q1" name="feedbackq1" value="full_dis">
+                        <label for="full_dis_q1" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q1" name="feedbackq1" value="part_dis">
+                        <label for="part_dis_q1" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q1" name="feedbackq1" value="neutral">
+                        <label for="neutral_q1" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q1" name="feedbackq1" value="part_agr">
+                        <label for="part_agr_q1" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q1" name="feedbackq1" value="full_agr">
+                        <label for="full_agr_q1" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    1/15
+                </p>
+            </div>
+
+
+            <div class="question_box" id="question_02">
+                <p class="question_text">
+                    O orçamento do município deve priorizar a educação.
+                </p>
+                  
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q2" name="feedbackq2" value="full_dis">
+                        <label for="full_dis_q2" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q2" name="feedbackq2" value="part_dis">
+                        <label for="part_dis_q2" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q2" name="feedbackq2" value="neutral">
+                        <label for="neutral_q2" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q2" name="feedbackq2" value="part_agr">
+                        <label for="part_agr_q2" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q2" name="feedbackq2" value="full_agr">
+                        <label for="full_agr_q2" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    2/15
+                </p>
+            </div>
+
+            <div class="question_box" id="question_03">
+                <p class="question_text">
+                    O município deve priorizar a redução de impostos, custe o que custar.
+                </p>
+                  
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q3" name="feedbackq3" value="full_dis">
+                        <label for="full_dis_q3" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q3" name="feedbackq3" value="part_dis">
+                        <label for="part_dis_q3" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q3" name="feedbackq3" value="neutral">
+                        <label for="neutral_q3" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q3" name="feedbackq3" value="part_agr">
+                        <label for="part_agr_q3" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q3" name="feedbackq3" value="full_agr">
+                        <label for="full_agr_q3" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    3/15
+                </p>
+            </div>
+
+            <div class="question_box" id="question_04">
+                <p class="question_text">
+                    A cidade deve ter mais vias com faixa exclusiva para bicicletas.
+                </p>
+                
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q4" name="feedbackq4" value="full_dis">
+                        <label for="full_dis_q4" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q4" name="feedbackq4" value="part_dis">
+                        <label for="part_dis_q4" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q4" name="feedbackq4" value="neutral">
+                        <label for="neutral_q4" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q4" name="feedbackq4" value="part_agr">
+                        <label for="part_agr_q4" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q4" name="feedbackq4" value="full_agr">
+                        <label for="full_agr_q4" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    4/15
+                </p>
+            </div>
+
+
+
+            <div class="question_box" id="question_05">
+                <p class="question_text">
+                    O plano diretor deve ser flexibilizado a fim de permitir edifícios mais altos em mais regiões da cidade.
+                </p>
+                
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q5" name="feedbackq5" value="full_dis">
+                        <label for="full_dis_q5" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q5" name="feedbackq5" value="part_dis">
+                        <label for="part_dis_q5" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q5" name="feedbackq5" value="neutral">
+                        <label for="neutral_q5" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q5" name="feedbackq5" value="part_agr">
+                        <label for="part_agr_q5" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q5" name="feedbackq5" value="full_agr">
+                        <label for="full_agr_q5" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    5/15
+                </p>
+            </div>
+
+
+
+            <div class="question_box" id="question_06">
+                <p class="question_text">
+                    A prefeitura deve taxar fortemente imóveis abandonados ou subutilizados.
+                </p>
+                
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q6" name="feedbackq6" value="full_dis">
+                        <label for="full_dis_q6" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q6" name="feedbackq6" value="part_dis">
+                        <label for="part_dis_q6" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q6" name="feedbackq6" value="neutral">
+                        <label for="neutral_q6" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q6" name="feedbackq6" value="part_agr">
+                        <label for="part_agr_q6" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q6" name="feedbackq6" value="full_agr">
+                        <label for="full_agr_q6" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    6/15
+                </p>
+            </div>
+
+
+
+            <div class="question_box" id="question_07">
+                <p class="question_text">
+                    Moradores de rua devem ser retirados compulsoriamente.
+                </p>
+                
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q7" name="feedbackq7" value="full_dis">
+                        <label for="full_dis_q7" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q7" name="feedbackq7" value="part_dis">
+                        <label for="part_dis_q7" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q7" name="feedbackq7" value="neutral">
+                        <label for="neutral_q7" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q7" name="feedbackq7" value="part_agr">
+                        <label for="part_agr_q7" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q7" name="feedbackq7" value="full_agr">
+                        <label for="full_agr_q7" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    7/15
+                </p>
+            </div>
+
+
+
+            <div class="question_box" id="question_08">
+                <p class="question_text">
+                    A implementação de radares de velocidade é benéfica para o trânsito.
+                </p>
+                
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q8" name="feedbackq8" value="full_dis">
+                        <label for="full_dis_q8" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q8" name="feedbackq8" value="part_dis">
+                        <label for="part_dis_q8" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q8" name="feedbackq8" value="neutral">
+                        <label for="neutral_q8" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q8" name="feedbackq8" value="part_agr">
+                        <label for="part_agr_q8" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q8" name="feedbackq8" value="full_agr">
+                        <label for="full_agr_q8" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    8/15
+                </p>
+            </div>
+
+
+
+            <div class="question_box" id="question_09">
+                <p class="question_text">
+                    A prefeitura deve incentivar ações culturais financeiramente.
+                </p>
+                
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q9" name="feedbackq9" value="full_dis">
+                        <label for="full_dis_q9" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q9" name="feedbackq9" value="part_dis">
+                        <label for="part_dis_q9" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q9" name="feedbackq9" value="neutral">
+                        <label for="neutral_q9" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q9" name="feedbackq9" value="part_agr">
+                        <label for="part_agr_q9" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q9" name="feedbackq9" value="full_agr">
+                        <label for="full_agr_q9" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    9/15
+                </p>
+            </div>
+
+
+
+            <div class="question_box" id="question_10">
+                <p class="question_text">
+                    O investimento na renovação do centro antigo (gare, praça, calçadão) foi uma boa política.
+                </p>
+                
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q10" name="feedbackq10" value="full_dis">
+                        <label for="full_dis_q10" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q10" name="feedbackq10" value="part_dis">
+                        <label for="part_dis_q10" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q10" name="feedbackq10" value="neutral">
+                        <label for="neutral_q10" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q10" name="feedbackq10" value="part_agr">
+                        <label for="part_agr_q10" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q10" name="feedbackq10" value="full_agr">
+                        <label for="full_agr_q10" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    10/15
+                </p>
+            </div>
+
+
+
+            <div class="question_box" id="question_11">
+                <p class="question_text">
+                    O combate ao crime deve vir antes dos direitos humanos.
+                </p>
+                
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q11" name="feedbackq11" value="full_dis">
+                        <label for="full_dis_q11" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q11" name="feedbackq11" value="part_dis">
+                        <label for="part_dis_q11" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q11" name="feedbackq11" value="neutral">
+                        <label for="neutral_q11" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q11" name="feedbackq11" value="part_agr">
+                        <label for="part_agr_q11" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q11" name="feedbackq11" value="full_agr">
+                        <label for="full_agr_q11" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    11/15
+                </p>
+            </div>
+
+
+
+            <div class="question_box" id="question_12">
+                <p class="question_text">
+                    A proibição do consumo de bebidas alcoólicas na rua após certo horário foi uma medida correta.
+                </p>
+                
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q12" name="feedbackq12" value="full_dis">
+                        <label for="full_dis_q12" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q12" name="feedbackq12" value="part_dis">
+                        <label for="part_dis_q12" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q12" name="feedbackq12" value="neutral">
+                        <label for="neutral_q12" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q12" name="feedbackq12" value="part_agr">
+                        <label for="part_agr_q12" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q12" name="feedbackq12" value="full_agr">
+                        <label for="full_agr_q12" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    12/15
+                </p>
+            </div>
+
+
+
+            <div class="question_box" id="question_13">
+                <p class="question_text">
+                    A prefeitura tem negligenciado os bairros periféricos da cidade.
+                </p>
+                
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q13" name="feedbackq13" value="full_dis">
+                        <label for="full_dis_q13" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q13" name="feedbackq13" value="part_dis">
+                        <label for="part_dis_q13" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q13" name="feedbackq13" value="neutral">
+                        <label for="neutral_q13" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q13" name="feedbackq13" value="part_agr">
+                        <label for="part_agr_q13" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q13" name="feedbackq13" value="full_agr">
+                        <label for="full_agr_q13" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    13/15
+                </p>
+            </div>
+
+
+
+            <div class="question_box" id="question_14">
+                <p class="question_text">
+                    Pessoas em imóveis irregulares (ocupações) devem ser retiradas.
+                </p>
+                
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q14" name="feedbackq14" value="full_dis">
+                        <label for="full_dis_q14" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q14" name="feedbackq14" value="part_dis">
+                        <label for="part_dis_q14" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q14" name="feedbackq14" value="neutral">
+                        <label for="neutral_q14" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q14" name="feedbackq14" value="part_agr">
+                        <label for="part_agr_q14" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q14" name="feedbackq14" value="full_agr">
+                        <label for="full_agr_q14" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    14/15
+                </p>
+            </div>
+
+
+
+            <div class="question_box" id="question_15">
+                <p class="question_text">
+                    O financiamento e envolvimento da prefeitura na Calourada na Gare foi positivo.
+                </p>
+                
+                <fieldset class="all_options">
+                    <div class="single_option first">
+                        <input type="radio" class="checkbox_option" id="full_dis_q15" name="feedbackq15" value="full_dis">
+                        <label for="full_dis_q15" class="checkbox_label">Discordo totalmente</label>
+                    </div>
+                
+                    <div class="single_option second">
+                        <input type="radio" class="checkbox_option" id="part_dis_q15" name="feedbackq15" value="part_dis">
+                        <label for="part_dis_q15" class="checkbox_label">Discordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option third">
+                        <input type="radio" class="checkbox_option" id="neutral_q15" name="feedbackq15" value="neutral">
+                        <label for="neutral_q15" class="checkbox_label">Neutro</label>
+                    </div>
+                
+                    <div class="single_option fourth">
+                        <input type="radio" class="checkbox_option" id="part_agr_q15" name="feedbackq15" value="part_agr">
+                        <label for="part_agr_q15" class="checkbox_label">Concordo parcialmente</label>
+                    </div>
+                
+                    <div class="single_option fifth">
+                        <input type="radio" class="checkbox_option" id="full_agr_q15" name="feedbackq15" value="full_agr">
+                        <label for="full_agr_q15" class="checkbox_label">Concordo totalmente</label>
+                    </div>
+                </fieldset>
+
+                <p class="question_counter">
+                    15/15
+                </p>
+            </div>
+
+            <div id = "results_button_box">
+                <button onclick="calculate_results();" class="results_button">Ver resultados</button>
+            </div>
+        </div>
+
+        <div class="questionary" id="fake_wait">
+            <div class="question_box" id="fake_wait_box">
+                <h1 class="calculating_message" id="calculating_message">
+                    Calculando suas afinidades...
+                </h1>
+    
+                <div class="progress_bar_hull">
+                    <div class="progress_bar" id="progress_bar">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="questionary" id="results">
+            <button style="color: gray; font-family: 'Zilla Slab', serif; border: 0px; background-color: transparent; font-size: 15px; position: relative;" onclick="window.location.reload();"><img src="../assets/arrow.png" style="width: 15px; filter: invert(50%); transform: translateY(15%);">Editar</button>
+            <div class="question_box" id="result_box">
+                <h2 class="winning_text" id="grand_winning_text">
+                    O candidato que mais se encaixa com você é
+                </h2>
+
+                <img src="" id="winning_picture" class="winning_picture">
+
+                <h1 class="winning_candidate" id="winning_candidate">
+                    Lorem ipsum
+                </h1>
+
+                <p class="winning_text">do <span id="winning_party">Partido dos Trabalhadores</span></p>
+                <p class="winning_text">com <strong><span id="winner_percent">xx</span>%</strong> de afinidade.</p>
+                
+                <div style="text-align: center; margin-top: 50px; margin-bottom: 20px;">
+                    <button class="results_button" id="desktop_sharing" onclick="copy_share_link();">Compartilhar</button>
+                    <a class="button" id="mobile_sharing" data-action="share/whatsapp/share" style="margin:auto;" href="">Compartilhar</a>
+                </div>
+            </div>
+
+
+            <div class="question_box" id="others_affinity">
+                <h1 style="font-family: 'Zilla Slab', serif; margin-bottom: -5px;">
+                    Seu ranking
+                </h1>
+                <p style="margin-bottom: 30px;">Estes são os candidatos com quem você mais se encaixa.</p>
+            </div>
+
+            <div class="question_box">
+                <h1 style="font-family: 'Zilla Slab', serif; margin-bottom: -5px;">
+                    Aviso
+                </h1>
+                <hr>
+                <p>O Prefeitômetro tem <b>fim informativo e lúdico</b>. Seus resultados devem ser interpretados com cautela e podem diferir de sua preferência real.</p>
+                <p>As respostas foram <b>obtidas diretamente das campanhas</b>, operando com seu aval. Sua afinidade é calculada a partir da distância entre as respostas.</p>
+                <p>Para mais informações, visite <a href="./about.html">sobre o projeto.</a></p>
+
+            </div>
+
+
+            <div class="question_box" id="comparisons">
+                <h1 style="font-family: 'Zilla Slab', serif; margin-bottom: -5px;">
+                    Revisão das respostas
+                </h1>
+                <p style="margin-bottom: 30px;">Aqui, você poderá comparar suas respostas às dos candidatos.</p>
+            </div>
+
+            <div class="question_box" id="extra_stuff">
+                <h1 style="font-family: 'Zilla Slab', serif;">
+                    Ainda por aqui?
+                </h1>
+                <p>
+                    Quer saber como o Prefeitômetro funciona? Veja <a href="./about.html">mais informações</a>.
+                </p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer_text">
+                <p>Made by <a href="https://github.com/brizzigui">Guilherme Brizzi</a> with <3</p>
+            </div>
+        </footer>
+    </body>
+</html>
