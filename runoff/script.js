@@ -466,7 +466,7 @@ function generate_questions()
             </p>
         </div>`;
 
-        console.log(string);
+
         document.getElementById("questionary").innerHTML += string;
     }
     
